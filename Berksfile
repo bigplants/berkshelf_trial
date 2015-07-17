@@ -9,3 +9,5 @@ cookbook "nodejs"
 cookbook "npm"
 cookbook "redisio"
 cookbook "ruby"
+cookbook "mysettings", path: "site-cookbooks/mysettings"
+

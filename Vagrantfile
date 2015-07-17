@@ -31,5 +31,6 @@ Vagrant.configure(2) do |config|
     chef.add_recipe "php-fpm"
     chef.add_recipe "nodejs"
     chef.add_recipe "ruby"
+    chef.add_recipe "mysettings"
   end
 end
