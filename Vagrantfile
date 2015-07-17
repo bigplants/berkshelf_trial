@@ -9,7 +9,7 @@ Vagrant.configure(2) do |config|
     vb.cpus = 1
   end
   if Vagrant.has_plugin?("vagrant-omnibus")
-    config.omnibus.chef_version = '11.4.4'
+    config.omnibus.chef_version = 'latest'
   end
   if Vagrant.has_plugin?("vagrant-cachier")
     config.cache.auto_detect = true
@@ -23,9 +23,7 @@ Vagrant.configure(2) do |config|
   end
   config.berkshelf.enabled = true
   config.vm.provision :chef_solo do |chef|
-    chef.run_list = [
-      "mysql",
-      "nginx"
-    ]
+    chef.add_recipe "nginx"
+    chef.add_recipe "mysql"
   end
 end
