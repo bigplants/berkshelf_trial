@@ -23,6 +23,7 @@ Vagrant.configure(2) do |config|
   end
   config.berkshelf.enabled = true
   config.vm.provision :chef_solo do |chef|
+    chef.add_recipe "mysettings"
     chef.add_recipe "nginx"
     chef.add_recipe "redisio"
     chef.add_recipe "redisio::enable"
@@ -32,6 +33,13 @@ Vagrant.configure(2) do |config|
     chef.add_recipe "php-mcrypt"
     chef.add_recipe "nodejs"
     chef.add_recipe "ruby"
-    chef.add_recipe "mysettings"
+    chef.json = {
+      nodejs: {
+        npm_packages: [
+          {name: "bower"},
+          {name: "gulp"},
+        ]
+      }
+    }
   end
 end
