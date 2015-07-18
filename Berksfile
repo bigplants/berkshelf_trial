@@ -1,13 +1,3 @@
 source "https://supermarket.getchef.com"
 
-cookbook "mysql"
-cookbook "nginx"
-cookbook "php"
-cookbook "composer"
-cookbook "php-fpm"
-cookbook "php-mcrypt"
-cookbook "nodejs"
-cookbook "nvm"
-cookbook "redisio"
-cookbook "ruby"
 cookbook "mysettings", path: "site-cookbooks/mysettings"

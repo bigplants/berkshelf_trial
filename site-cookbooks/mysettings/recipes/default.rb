@@ -6,6 +6,15 @@
 #
 # All rights reserved - Do Not Redistribute
 #
+include_recipe "nginx"
+include_recipe "php"
+include_recipe "composer"
+include_recipe "php-fpm"
+include_recipe "php-mcrypt"
+include_recipe "nodejs"
+include_recipe "redisio"
+include_recipe "redisio::enable"
+include_recipe "ruby"
 
 # install and start mysql
 mysql_service 'default' do
@@ -15,7 +24,7 @@ mysql_service 'default' do
   action [:create, :start]
 end
 
-# install gem package
-%w{sass}.each do |package_name|
-  gem_package package_name
+# install gem packages
+%w{sass}.each do |gem_pkg|
+  gem_package gem_pkg
 end

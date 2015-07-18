@@ -24,15 +24,6 @@ Vagrant.configure(2) do |config|
   config.berkshelf.enabled = true
   config.vm.provision :chef_solo do |chef|
     chef.add_recipe "mysettings"
-    chef.add_recipe "nginx"
-    chef.add_recipe "redisio"
-    chef.add_recipe "redisio::enable"
-    chef.add_recipe "php"
-    chef.add_recipe "composer"
-    chef.add_recipe "php-fpm"
-    chef.add_recipe "php-mcrypt"
-    chef.add_recipe "nodejs"
-    chef.add_recipe "ruby"
     chef.json = {
       nodejs: {
         npm_packages: [
