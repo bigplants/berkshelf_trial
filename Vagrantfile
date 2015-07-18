@@ -39,6 +39,7 @@ Vagrant.configure(2) do |config|
           {name: "bower"},
           {name: "gulp"},
           {name: "coffee-script"},
+          {name: "less"},
         ]
       }
     }
