@@ -38,6 +38,7 @@ Vagrant.configure(2) do |config|
         npm_packages: [
           {name: "bower"},
           {name: "gulp"},
+          {name: "coffee-script"},
         ]
       }
     }
